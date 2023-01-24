@@ -21,13 +21,20 @@ const questions = [
   },
   {
     type: "confirm",
-    message: "Do you want to add a description",
+    message: "Do you want to add a description?",
     name: "addDescription",
   },
   {
     type: "string",
     message: "Provide a description for your project:",
     name: "description",
+    validate: mandatoryValidation,
+    when: (answers) => {
+      return answers["addDescription"] === true;
+    },
+    type: "string",
+    message: "Do you want to add Table of Contents?:",
+    name: "TableOfContents",
     validate: mandatoryValidation,
     when: (answers) => {
       return answers["addDescription"] === true;
