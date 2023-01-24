@@ -20,25 +20,51 @@ const questions = [
     validate: mandatoryValidation,
   },
   {
-    type: "confirm",
-    message: "Do you want to add a description?",
-    name: "addDescription",
-  },
-  {
     type: "string",
     message: "Provide a description for your project:",
     name: "description",
-    validate: mandatoryValidation,
-    when: (answers) => {
-      return answers["addDescription"] === true;
-    },
-    type: "string",
+  },
+  {
+    type: "confirm",
     message: "Do you want to add Table of Contents?:",
-    name: "TableOfContents",
-    validate: mandatoryValidation,
-    when: (answers) => {
-      return answers["addDescription"] === true;
-    },
+    name: "tableOfContents",
+  },
+  {
+    type: "string",
+    message: "Provide any installation instructions for your project:",
+    name: "installation",
+  },
+  {
+    type: "string",
+    message: "Provide any usage information for your project:",
+    name: "usage",
+  },
+  {
+    type: "string",
+    message: "Provide any contribution instructions for your project:",
+    name: "contribution",
+  },
+  {
+    type: "string",
+    message: "Provide any testing instructions for your project:",
+    name: "tests",
+  },
+  {
+    type: "list",
+    message: "Provide your project's license (default MIT):",
+    name: "license",
+    choices: ["MIT", "Apache"],
+    default: "MIT",
+  },
+  {
+    type: "string",
+    message: "Enter your github username to show in a questions section:",
+    name: "username",
+  },
+  {
+    type: "string",
+    message: "Enter your email address to show in a questions section:",
+    name: "email",
   },
 ];
 
@@ -52,13 +78,13 @@ function init() {
   inquirer
     .prompt(questions)
     .then((answers) => {
-      console.log("answers:");
-      console.log(answers);
+      //console.log("answers:");
+      //console.log(answers);
 
       //generate markdown here
       // save to file also
-      //let markdown = generateMarkdown({ title: "this is a test" });
-      //writeToFile("README.md", markdown);
+      let markdown = generateMarkdown(answers);
+      writeToFile("README.md", markdown);
     })
     .catch((error) => {
       console.error("Error encountered: " + error);
