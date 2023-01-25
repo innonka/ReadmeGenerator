@@ -21,7 +21,7 @@ const questions = [
   },
   {
     type: "string",
-    message: "Provide a description for your project:",
+    message: "Provide a short description explaining the what, why, and how of your project:",
     name: "description",
   },
   {
@@ -36,7 +36,7 @@ const questions = [
   },
   {
     type: "string",
-    message: "Provide any usage information for your project:",
+    message: "Provide instructions and examples for use:",
     name: "usage",
   },
   {
@@ -58,12 +58,12 @@ const questions = [
   },
   {
     type: "string",
-    message: "Enter your github username to show in a questions section:",
+    message: "Enter your github username to show in the questions section:",
     name: "username",
   },
   {
     type: "string",
-    message: "Enter your email address to show in a questions section:",
+    message: "Enter your email address to show in the questions section:",
     name: "email",
   },
 ];
