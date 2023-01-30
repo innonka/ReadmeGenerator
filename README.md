@@ -5,6 +5,7 @@
 ## Description
 
 A command-line application that dynamically generates a README.md file from a user's input using the inquierer package. Answer questions and get a high-quality markdown README file. 
+Click [here] for the demo (https://drive.google.com/file/d/1v8mXGSaCovukMrWGpgc2u-S9uMAoXOMb/view)
 
 #### Table of Contents
 
