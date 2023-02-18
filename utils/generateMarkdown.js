@@ -38,26 +38,26 @@ function generateMarkdown(data) {
 
   if (data.usage) {
     result = `${result}${blankLine}## Usage${blankLine}${data.usage}${blankLine}`;
-    tableOfContents.push("1. [Usage](#usage)  ${blankLine}");
+    tableOfContents.push(`1. [Usage](#usage)  ${blankLine}`);
   }
 
   if (data.license) {
     result = `${result}${blankLine}## License${blankLine}${data.license} License`;
-    tableOfContents.push("1. [License](#license)  ${blankLine}");
+    tableOfContents.push(`1. [License](#license)  ${blankLine}`);
   }
 
   if (data.contribution) {
     result = `${result}${blankLine}## Contribution${blankLine}${data.contribution}`;
-    tableOfContents.push("1. [Contribution](#contribution)  ${blankLine}");
+    tableOfContents.push(`1. [Contribution](#contribution)  ${blankLine}`);
   }
 
   if (data.tests) {
     result = `${result}${blankLine}## Tests${blankLine}${data.tests}`;
-    tableOfContents.push("1. [Tests](#tests)  ${blankLine}");
+    tableOfContents.push(`1. [Tests](#tests)  ${blankLine}`);
   }
 
   if (data.username || data.email) {
-    tableOfContents.push("1. [Questions](#questions)  ${blankLine}");
+    tableOfContents.push(`1. [Questions](#questions)  ${blankLine}`);
     result = `${result}${blankLine}## Questions`;
     if (data.username) {
       result = `${result}${blankLine}[Profile](https://github.com/${data.username})${blankLine}`;
